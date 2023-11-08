@@ -7,119 +7,89 @@ const randomColor = () => {
 }
 const UserAccount = [
     {
-        name: 'Viplao Subhash Itankar',
-        email: 'viplaov@gmail.com',
+        name: 'Varun Sharma',
+        email: 'varun@gmail.com',
         status: 'LoggedIn',
-        company: 'Revat Network',
-        vendor: 'Pooja Arora',
+        company: 'GHRIETN',
+        vendor: 'Viplao Itankar',
         color: randomColor(),
     }
 ];
 const HomeContent = [
     {
         color: randomColor(),
-        name: 'Sakshi Donadkar',
+        name: 'Yash',
         interest: 'Interested',
         event: 'Followup call @ Tommorow, 10:00 AM',
         time: 'Today, 6:14 PM',
-        contact: 9422686346,
+        contact: 1234567890,
     },
     {
         color: randomColor(),
-        name: 'Vaishnavi Dhage',
+        name: 'Vaishnavi',
         interest: 'Interested',
         event: 'Followup call @ Tommorow, 10:00 AM',
         time: 'Today, 6:14 PM',
-        contact: 9422686346,
+        contact: 684187462,
     },
     {
         color: randomColor(),
-        name: 'Varun Sharma',
-        interest: 'Interested',
-        event: 'Followup call @ Tommorow, 10:00 AM',
-        time: 'Today, 6:14 PM',
-        contact: 9422686346,
-    },
-    {
-        color: randomColor(),
-        name: 'Viplao Itankar',
-        interest: 'Interested',
-        event: 'Followup call @ Tommorow, 10:00 AM',
-        time: 'Today, 6:14 PM',
-        contact: 9422686346,
-    },
-    {
-        color: randomColor(),
-        name: 'Yash Chhenniya',
-        interest: 'Interested',
-        event: 'Followup call @ Tommorow, 10:00 AM',
-        time: 'Today, 6:14 PM',
-        contact: 9422686346,
-    },
-    {
-        color: randomColor(),
-        name: 'Yash Kawle',
+        name: 'Sakshi',
         interest: 'Interested',
         event: 'Followup call @ Tommorow, 10:00 AM',
         time: 'Today, 6:14 PM',
         contact: 9422686346,
     },
 ];
+
 const MessageContent = [
     {
         id: '1',
-        sender: 'Sakshi Donadkar',
+        sender: 'Yash',
         time: '2 mins ago',
         message: 'Hey, I am interested in your project',
     },
     {
         id: '2',
-        sender: 'Vaishnavi Dhage',
+        sender: 'Vaishnavi',
         time: '6 mins ago',
         message: 'Hey, I am interested in your project',
 
     },
     {
         id: '3',
-        sender: 'Varun Sharma',
+        sender: 'Sakshi',
         time: '12 mins ago',
         message: 'Hey, I am interested in your project',
 
-    },
-    {
-        id: '4',
-        sender: 'Viplao Itankar',
-        time: '20 mins ago',
-        message: 'Hey, I am interested in your project',
-
-    },
-    {
-        id: '5',
-        sender: 'Yash Chhenniya',
-        time: '45 mins ago',
-        message: 'Hey, I am interested in your project',
-
-    },
-    {
-        id: '6',
-        sender: 'Yash Kawle',
-        time: '1 hour ago',
-        message: 'Hey, I am interested in your project',
-
-    },
-    {
-        id: '7',
-        sender: 'Raj Arora',
-        time: '2 hours ago',
-        message: 'Hey, I am interested in your project',
-    },
-    {
-        id: '8',
-        sender: 'Pooja Arora',
-        time: '4 hours ago',
-        message: 'Hey, I am interested in your project',
     }
 ];
 
+const ContactContent = [
+    {
+        color: randomColor(),
+        name: 'Yash',
+        interest: 'Interested',
+        event: 'Followup call @ Tommorow, 10:00 AM',
+        time: 'Today, 6:14 PM',
+        contact: 1234567890,
+    },
+    {
+        color: randomColor(),
+        name: 'Vaishnavi',
+        interest: 'Interested',
+        event: 'Followup call @ Tommorow, 10:00 AM',
+        time: 'Today, 6:14 PM',
+        contact: 684187462,
+    },
+    {
+        color: randomColor(),
+        name: 'Sakshi',
+        interest: 'Interested',
+        event: 'Followup call @ Tommorow, 10:00 AM',
+        time: 'Today, 6:14 PM',
+        contact: 9422686346,
+    },
+];
 
-export { HomeContent, UserAccount, MessageContent, randomColor }
+export { HomeContent, UserAccount, MessageContent, randomColor, ContactContent }

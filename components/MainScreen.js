@@ -16,6 +16,7 @@ import CallsScreen from './Screens/CallsScreen';
 import MessagesScreen from './Screens/MessagesScreen';
 import ChatScreen from './Screens/ChatScreen';
 import ContactsScreen from './Screens/ContactsScreen';
+import Contact from './Screens/Contact';
 import Dashboard from './Screens/Dashboard';
 
 const home = 'Home';
@@ -87,6 +88,7 @@ function StackNav() {
         <Stack.Navigator>
             <Stack.Screen name="TabScreen" component={TabScreen} options={() => ({ headerShown: false })} />
             <Stack.Screen name="ChatScreen" component={ChatScreen} options={() => ({ headerShown: false })} />
+            <Stack.Screen name="Contact" component={Contact} options={() => ({ headerShown: false })} />
         </Stack.Navigator>
     )
 }

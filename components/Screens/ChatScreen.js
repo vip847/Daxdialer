@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {useRoute, useNavigation} from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import { View, Text, TextInput, TouchableOpacity, SafeAreaView, ScrollView, KeyboardAvoidingView } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import tw from 'twrnc';
@@ -22,9 +22,9 @@ export default function ChatScreen() {
   };
 
   const ChatHeader = () => {
-    return(
+    return (
       <View style={tw`h-[60px] bg-white shadow-md flex flex-row items-center mb-3`}>
-        <TouchableOpacity style={tw`rounded-full`} onPress={()=>nav.goBack()} >
+        <TouchableOpacity style={tw`rounded-full`} onPress={() => nav.goBack()} >
           <Ionicons style={tw`pl-4`} name='arrow-back' size={24} color={'black'} />
         </TouchableOpacity>
         <Text style={tw`pl-6 font-medium text-black text-[20px]`}>{route.params.data.sender}</Text>
