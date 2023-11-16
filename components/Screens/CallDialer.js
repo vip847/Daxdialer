@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { StyleSheet, Button, Text, View, Image, FlatList, SafeAreaView, TouchableOpacity, Linking, Modal } from 'react-native';
+import { Text, View, TouchableOpacity, Linking, Modal } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import tw from 'twrnc';
 

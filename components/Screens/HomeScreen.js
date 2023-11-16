@@ -1,25 +1,26 @@
 import React from 'react';
-import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { HomeContent, UserAccount } from '../../assets/Content';
 import tw from 'twrnc';
+import { useNavigation } from '@react-navigation/native';
 
 const HL = () => {
     return <View style={tw`border-b border-b-gray-200 my-1`} />;
 };
 
-const ContactCard = ({index, name, interest, event, time, color, contact}) => (
-    <View style={tw`flex-row bg-white shadow-sm mt-[1px] p-2`}>
-        <Text style={[tw`text-[35px] w-[50px] h-[50px] rounded-full text-center`,{backgroundColor: `${color}`}]}>{name[0].toUpperCase()}</Text>
+const ContactCard = ({item, navigation}) => (
+    <TouchableOpacity onPress={() => navigation.navigate('History', { data: item })} style={tw`flex-row bg-white shadow-sm mt-[1px] p-2`}>
+        <Text style={[tw`text-[35px] w-[50px] h-[50px] rounded-full text-center`,{backgroundColor: `${item.color}`}]}>{item.name[0].toUpperCase()}</Text>
         <View style={tw`w-full pl-3`}>
             <Text style={tw`shadow-sm`}>
-                <Text style={tw`font-bold text-black text-[22px]`} >{name}</Text>{'\n'}
-                <Text style={tw`bg-blue-100 `}>{interest}</Text>
+                <Text style={tw`font-bold text-black text-[22px]`} >{item.name}</Text>{'\n'}
+                <Text style={tw`bg-blue-100 `}>{item.interest}</Text>
             </Text>
             <HL />
-            <Text style={tw`text-black text-[20px] w-[85%]`} >{event}</Text>
-            <Text style={tw``} >{time}</Text>
+            <Text style={tw`text-black text-[20px] w-[85%]`} >{item.event}</Text>
+            <Text style={tw``} >{item.time}</Text>
             <HL/>
             <View style={tw` flex-1 flex-row w-[85%] items-center h-8`}>
                 <TouchableOpacity style={tw`flex-1 flex-row justify-center`}>
@@ -27,7 +28,7 @@ const ContactCard = ({index, name, interest, event, time, color, contact}) => (
                     <Text style={tw`pl-2 text-[20px]`}>Calls</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={tw`flex-1 flex-row justify-center`}>
-                    <Ionicons name='chatbox-ellipses-outline' size={25} color={'grey'} />
+                    <Ionicons name='chatbox-outline' size={25} color={'grey'} />
                     <Text style={tw`pl-2 text-[20px]`}>SMS</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={tw`flex-1 flex-row justify-center`}>
@@ -36,7 +37,7 @@ const ContactCard = ({index, name, interest, event, time, color, contact}) => (
                 </TouchableOpacity>
             </View>
         </View>
-    </View>
+    </TouchableOpacity>
 );
 
 const UserCard = UserAccount.filter((user, key) => user.status === 'LoggedIn')
@@ -52,11 +53,13 @@ const UserShow = UserCard.map((user, key) =>
 );
 
 export default function HomeScreen(){
+    const navigation = useNavigation();
+
     return(
         <View style={tw`flex-1`}>
             <ScrollView horizontal={false} showsVerticalScrollIndicator={false}>
                 {UserShow}
-                {HomeContent.map((post, key) => <ContactCard key={key} index={key} name={post.name} interest={post.interest} event={post.event} time={post.time} color={post.color} contact={post.contact} />)}
+                {HomeContent.map((post, key) => <ContactCard key={key} item={post} navigation={navigation} />)}
             </ScrollView>
         </View>
     )

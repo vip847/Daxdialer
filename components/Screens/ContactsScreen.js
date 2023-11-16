@@ -3,13 +3,13 @@ import {
     Text,
     PermissionsAndroid,
     FlatList,
-    Image,
     TouchableOpacity,
     Linking,
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useIsFocused } from '@react-navigation/native';
-import { ContactContent, randomColor } from '../../assets/Content';
+import { HomeContent } from '../../assets/Content';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import tw from 'twrnc';
 
 const Contact = ({ navigation }) => {
@@ -43,36 +43,27 @@ const Contact = ({ navigation }) => {
             <TouchableOpacity style={tw``} onPress={() => navigation.navigate('Contact', { data: item })}>
                 <View style={[tw`flex flex-row items-center bg-white rounded-[1px] p-[10px] mb-[2px] shadow-sm`]}>
                     <View style={tw`flex items-center`}>
-                        <Text style={[tw`rounded-full w-[50px] h-[50px] text-center text-black text-[35px]`, { backgroundColor: `${randomColor()}` }]} >{item.name[0].toUpperCase()}</Text>
+                        <Text style={[tw`rounded-full w-[50px] h-[50px] text-center text-black text-[35px]`, { backgroundColor: `${item.color}` }]} >{item.name[0].toUpperCase()}</Text>
                     </View>
                     <View style={tw`pl-2 flex-1 justify-end`}>
                         <Text style={[tw`text-[22px] mb-[5px] text-black w-[75%]`]}>{item.name}</Text>
                         <Text style={tw`text-[15px] flex-1 justify-end`}>{item.contact}</Text>
                     </View>
                     <TouchableOpacity
+                        style={tw`mr-2`}
                         onPress={() => {
                             const url = Communications.text(
                                 item.contact,
                             );
                         }}>
-                        <Image
-                            source={require('../images/message.png')}
-                            style={{
-                                width: 24,
-                                height: 24,
-                                tintColor: '#000',
-                                marginRight: 20,
-                            }}
-                        />
+                        <Ionicons name='chatbox-outline' size={30} color={'black'} />
                     </TouchableOpacity>
                     <TouchableOpacity
+                        style={tw`mr-1`}
                         onPress={() => {
                             Linking.openURL(`tel:${item.contact}`);
                         }}>
-                        <Image
-                            source={require('../images/call.png')}
-                            style={{ width: 20, height: 20, tintColor: '#000' }}
-                        />
+                        <Ionicons name='call-outline' size={30} color={'black'} />
                     </TouchableOpacity>
                 </View>
                 <View style={tw`h-[2px] bg-[#ccc]`} />
@@ -83,7 +74,7 @@ const Contact = ({ navigation }) => {
     return (
         <View style={{ flex: 1 }}>
             <FlatList
-                data={ContactContent}
+                data={HomeContent}
                 renderItem={renderContactItem}
             />
         </View>

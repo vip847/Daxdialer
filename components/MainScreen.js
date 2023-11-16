@@ -12,6 +12,7 @@ import { UserAccount } from '../assets/Content';
 
 import LoadingPage from './LoadingPage';
 import HomeScreen from './Screens/HomeScreen';
+import HistoryScreen from './Screens/HistoryScreen';
 import CallsScreen from './Screens/CallsScreen';
 import MessagesScreen from './Screens/MessagesScreen';
 import ChatScreen from './Screens/ChatScreen';
@@ -87,6 +88,7 @@ function StackNav() {
     return (
         <Stack.Navigator>
             <Stack.Screen name="TabScreen" component={TabScreen} options={() => ({ headerShown: false })} />
+            <Stack.Screen name="History" component={HistoryScreen} options={() => ({ headerShown: false })} />
             <Stack.Screen name="ChatScreen" component={ChatScreen} options={() => ({ headerShown: false })} />
             <Stack.Screen name="Contact" component={Contact} options={() => ({ headerShown: false })} />
         </Stack.Navigator>

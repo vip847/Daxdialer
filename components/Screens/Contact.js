@@ -2,9 +2,6 @@ import {
     View,
     Text,
     TouchableOpacity,
-    Image,
-    PermissionsAndroid,
-    SafeAreaView
 } from 'react-native';
 import React from 'react';
 import { useRoute } from '@react-navigation/native';
@@ -28,22 +25,7 @@ const Contact = ({ navigation }) => {
     return (
         <View style={tw`flex-1 bg-white`}>
             <ContactHeader />
-            <View
-                style={tw`w-[100%] h-0 flex-row items-center pl-5`}>
-                <TouchableOpacity
-                    onPress={() => {
-                        navigation.goBack();
-                    }}>
-                    <Image
-                        source={require('../images/back.png')}
-                        style={{ width: 30, height: 30, tintColor: '#fff' }}
-                    />
-                </TouchableOpacity>
-            </View>
-            <Image
-                source={require('../images/user.png')}
-                style={tw`w-[60px] h-[60px] mt-[50px] self-center`}
-            />
+            <Ionicons name='person' size={100} color={'black'} style={tw`bg-gray-300 rounded-full p-3 self-center`} />
             <Text style={tw`self-center mt-5 text-[25px]`}>
                 {route.params.data.name}
             </Text>
@@ -60,19 +42,12 @@ const Contact = ({ navigation }) => {
                     style={tw`self-center mt-5 ml-5 text-[20px]`}>
                     {route.params.data.contact}
                 </Text>
-                <View
-                    style={tw`flex-row pr-[15px] items-center`}>
-                    <TouchableOpacity>
-                        <Image
-                            source={require('../images/message.png')}
-                            style={tw`h-[24px] w-[24px] mr-5`}
-                        />
+                <View style={tw`flex-row pr-[15px] items-center`} >
+                    <TouchableOpacity style={tw`mr-2`} >
+                    <Ionicons name='chatbox-outline' size={25} color={'black'} />
                     </TouchableOpacity>
-                    <TouchableOpacity>
-                        <Image
-                            source={require('../images/call.png')}
-                            style={tw`h-[20px] w-[20px]`}
-                        />
+                    <TouchableOpacity style={tw`mr-1`} >
+                    <Ionicons name='call-outline' size={25} color={'black'} />
                     </TouchableOpacity>
                 </View>
             </View>

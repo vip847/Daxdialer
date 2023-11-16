@@ -5,7 +5,7 @@ const randomColor = () => {
     const color = `rgb( ${red}, ${green}, ${blue} )`;
     return color;
 }
-const UserAccount = [
+var UserAccount = [
     {
         name: 'Varun Sharma',
         email: 'varun@gmail.com',
@@ -15,81 +15,150 @@ const UserAccount = [
         color: randomColor(),
     }
 ];
-const HomeContent = [
+var HomeContent = [
     {
         color: randomColor(),
         name: 'Yash',
+        company: 'GHRIETN',
+        attempts: 1,
+        abatz: 'abatz',
         interest: 'Interested',
         event: 'Followup call @ Tommorow, 10:00 AM',
         time: 'Today, 6:14 PM',
-        contact: 1234567890,
+        contact: '1234567890',
+        messages: [
+            {
+                message:'Hey, I am interested in your project',
+                time:'08-11-2023 23:23:23',
+                mode:'received'
+            },
+            {
+                message:'I will send you details',
+                time:'08-11-2023 23:23:23',
+                mode:'sent'
+            },
+        ],
+        history: [
+            {
+                type:'task',
+                change : 'Today, 12:14 PM',
+                Task_Remainder_Time : 'Today, 6:14 PM',
+                Task_Due_Date : '22 March',
+                note:'chck for feedback n demo'
+            },
+            {
+                type:'call',
+                Duration : '00:00',
+                time : 'Today, 6:14 PM',
+            },
+            {
+                type:'task',
+                change : 'Today, 12:14 PM',
+                Task_Remainder_Time : 'Today, 6:14 PM',
+                Task_Due_Date : '22 March',
+                note:'chck for feedback n demo'
+            },
+            {
+                type:'task',
+                change : 'Today, 12:14 PM',
+                Task_Remainder_Time : 'Today, 6:14 PM',
+                Task_Due_Date : '22 March',
+                note:'chck for feedback n demo'
+            }
+        ],
     },
     {
         color: randomColor(),
         name: 'Vaishnavi',
+        company: 'GHRIETN',
+        attempts: 1,
+        abatz: 'abatz',
         interest: 'Interested',
         event: 'Followup call @ Tommorow, 10:00 AM',
         time: 'Today, 6:14 PM',
-        contact: 684187462,
+        contact: '6841874628',
+        messages: [
+            {
+                message:'Hey, I am interested in your project',
+                time:'08-11-2023 23:23:23',
+                mode:'received'
+            }
+        ],
+        history: [
+            {
+                type:'task',
+                change : 'Today, 12:14 PM',
+                Task_Remainder_Time : 'Today, 6:14 PM',
+                Task_Due_Date : '22 March',
+                note:'chck for feedback n demo'
+            },
+            {
+                type:'call',
+                Duration : '00:00',
+                time : 'Today, 6:14 PM',
+            },
+            {
+                type:'task',
+                change : 'Today, 12:14 PM',
+                Task_Remainder_Time : 'Today, 6:14 PM',
+                Task_Due_Date : '22 March',
+                note:'chck for feedback n demo'
+            },
+            {
+                type:'task',
+                change : 'Today, 12:14 PM',
+                Task_Remainder_Time : 'Today, 6:14 PM',
+                Task_Due_Date : '22 March',
+                note:'chck for feedback n demo'
+            }
+        ],
     },
     {
         color: randomColor(),
         name: 'Sakshi',
+        company: 'GHRIETN',
+        attempts: 1,
+        abatz: 'abatz',
         interest: 'Interested',
         event: 'Followup call @ Tommorow, 10:00 AM',
         time: 'Today, 6:14 PM',
-        contact: 9422686346,
+        contact: '9422686346',
+        messages: [
+            {
+                message:'Hey, I am interested in your project',
+                time:'08-11-2023 23:23:23',
+                mode:'received'
+            }
+        ],
+        history: [
+            {
+                type:'task',
+                change : 'Today, 12:14 PM',
+                Task_Remainder_Time : 'Today, 6:14 PM',
+                Task_Due_Date : '22 March',
+                note:'chck for feedback n demo'
+            },
+            {
+                type:'call',
+                Duration : '00:00',
+                time : 'Today, 6:14 PM',
+            },
+            {
+                type:'task',
+                change : 'Today, 12:14 PM',
+                Task_Remainder_Time : 'Today, 6:14 PM',
+                Task_Due_Date : '22 March',
+                note:'chck for feedback n demo'
+            },
+            {
+                type:'task',
+                change : 'Today, 12:14 PM',
+                Task_Remainder_Time : 'Today, 6:14 PM',
+                Task_Due_Date : '22 March',
+                note:'chck for feedback n demo'
+            }
+        ],
     },
 ];
 
-const MessageContent = [
-    {
-        id: '1',
-        sender: 'Yash',
-        time: '2 mins ago',
-        message: 'Hey, I am interested in your project',
-    },
-    {
-        id: '2',
-        sender: 'Vaishnavi',
-        time: '6 mins ago',
-        message: 'Hey, I am interested in your project',
-
-    },
-    {
-        id: '3',
-        sender: 'Sakshi',
-        time: '12 mins ago',
-        message: 'Hey, I am interested in your project',
-
-    }
-];
-
-const ContactContent = [
-    {
-        color: randomColor(),
-        name: 'Yash',
-        interest: 'Interested',
-        event: 'Followup call @ Tommorow, 10:00 AM',
-        time: 'Today, 6:14 PM',
-        contact: 1234567890,
-    },
-    {
-        color: randomColor(),
-        name: 'Vaishnavi',
-        interest: 'Interested',
-        event: 'Followup call @ Tommorow, 10:00 AM',
-        time: 'Today, 6:14 PM',
-        contact: 684187462,
-    },
-    {
-        color: randomColor(),
-        name: 'Sakshi',
-        interest: 'Interested',
-        event: 'Followup call @ Tommorow, 10:00 AM',
-        time: 'Today, 6:14 PM',
-        contact: 9422686346,
-    },
-];
-
-export { HomeContent, UserAccount, MessageContent, randomColor, ContactContent }
+export { HomeContent, UserAccount }
